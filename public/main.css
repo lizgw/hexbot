@@ -60,3 +60,10 @@ html, body {
     max-height: 20%;
     box-sizing: border-box;
 }
+
+.color-box {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    border: 2px solid white;
+}
