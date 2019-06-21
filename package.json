@@ -1,0 +1,23 @@
+{
+  "name": "hexbot-color-game",
+  "version": "1.0.0",
+  "description": "a tiny web game about sorting colors. built with hexbot from noopschallenge.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lizgw/hexbot.git"
+  },
+  "author": "Liz Wigglesworth",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lizgw/hexbot/issues"
+  },
+  "homepage": "https://github.com/lizgw/hexbot#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
