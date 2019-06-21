@@ -40,11 +40,14 @@ function checkSorting() {
     // package up the current color order to check
     let colorData = {
         type: "hue",
-        colors: [
-            "#ffffff",
-            "#fefefef"
-        ]
+        colors: [ ]
     }
+
+    // get the colors in order
+    $(".color-box").each(function(i, obj) {
+        colorData.colors.push(obj.style.backgroundColor);
+    });
+
     // request to the api
     $.ajax({
         type: "POST",
@@ -52,7 +55,6 @@ function checkSorting() {
         data: JSON.stringify(colorData),
         contentType: "application/json",
         success: (response) => {
-            console.log(response);
             if (response.result === "success") {
                 console.log("you ordered everything correctly! onto the next level!");
                 playerLevel++;
