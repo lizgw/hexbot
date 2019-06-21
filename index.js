@@ -8,9 +8,33 @@ const app = express();
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, "public")));
 
+function checkColorOrder(data) {
+    let statusObject = {
+        result: "success",
+        outOfOrder: []
+    }
+
+    switch(data.type) {
+        case "hue":
+            console.log("checking hue is TODO");
+            break;
+        case saturation:
+            console.log("checking saturation is TODO");
+            break;
+        case "luminosity":
+            console.log("checking luminosity is TODO");
+            break;
+    }
+
+    return statusObject;
+}
+
 app.post("/check-colors", (req, res) => {
     console.log(req.body);
-    res.send("API got the request & now we're checking the colors...");
+
+    let result = checkColorOrder(req.body);
+
+    res.send(result);
 });
 
 const server = app.listen(PORT, () => {

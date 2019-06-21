@@ -53,6 +53,16 @@ function checkSorting() {
         contentType: "application/json",
         success: (response) => {
             console.log(response);
+            if (response.result === "success") {
+                console.log("you ordered everything correctly! onto the next level!");
+                playerLevel++;
+                $("#game-canvas").empty();
+                $("#current-level").text(playerLevel);
+                setupLevel(playerLevel);
+            } else {
+                console.log("uh oh, these colors are out of order: ");
+                console.log(response.outOfOrder);
+            }
         }
     });
 }
