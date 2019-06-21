@@ -37,7 +37,24 @@ function setupLayout(colorArray) {
 }
 
 function checkSorting() {
-    console.log("checking sorting...");
+    // package up the current color order to check
+    let colorData = {
+        type: "hue",
+        colors: [
+            "#ffffff",
+            "#fefefef"
+        ]
+    }
+    // request to the api
+    $.ajax({
+        type: "POST",
+        url: "/check-colors",
+        data: JSON.stringify(colorData),
+        contentType: "application/json",
+        success: (response) => {
+            console.log(response);
+        }
+    });
 }
 
 // build a game based on the player's current level
