@@ -1,8 +1,12 @@
 :root {
-    --font-body: "Consolas", monospace;
+    --font-body: "Corbel", "Calibri", sans-serif;
+    --color-black: #1a1a1a;
+    --color-white: #fcfcfc;
     --color-gray: #f3f3f3;
     --color-gray-light: #f8f8f8;
     --color-accent: #ee5a4f;
+    --color-accent-darker: #c94940;
+    --size-border-radius: 1rem;
 }
 
 html, body {
@@ -18,15 +22,23 @@ html, body {
     font-family: var(--font-body);
     width: 100%;
     height: 100%;
+    margin: 0 auto;
+    background: var(--color-white);
+    color: var(--color-black);
+}
+
+#sidebar, #game {
+    margin: 2rem;
+    border-radius: var(--size-border-radius);
 }
 
 #sidebar {
-    max-width: 25%;
+    max-width: 20%;
     background: var(--color-gray);
     width: 100%;
-    height: 100%;
     padding: 2rem;
     box-sizing: border-box;
+    margin-right: 1rem;
 }
 
 #sidebar h2 {
@@ -34,12 +46,18 @@ html, body {
     font-weight: normal;
 }
 
+#sidebar li {
+    margin: 0.25rem 0;
+}
+
 #sidebar a {
     color: var(--color-accent);
     text-decoration: none;
-    border-bottom-width: 1px;
-    border-bottom-style: dashed;
-    border-bottom-color: var(--color-accent);
+    border-bottom: 1px dashed var(--color-accent);
+}
+
+#sidebar a:hover {
+    color: var(--color-accent-darker);
 }
 
 .link-list {
@@ -49,9 +67,9 @@ html, body {
 
 #game {
     width: 100%;
-    height: 100%;
     background: var(--color-gray-light);
     text-align: center;
+    margin-left: 1rem;
 }
 
 #game-info {
