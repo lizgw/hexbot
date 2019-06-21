@@ -72,7 +72,18 @@ html, body {
     height: 6rem;
     border-radius: 15%;
     border: 2px solid white;
-    background: red;
     margin: 0.75rem;
     box-shadow: 8px 8px 15px #c5c5c5
+}
+
+.color-box:hover {
+    cursor: pointer;
+}
+
+.color-box-placeholder {
+    width: 6rem;
+    height: 6rem;
+    border-radius: 15%;
+    border: 2px dashed var(--color-accent);
+    margin: 0.75rem;
 }

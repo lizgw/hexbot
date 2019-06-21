@@ -25,6 +25,12 @@ function setupLayout(colorArray) {
         box.style.background = color.value;
         $("#game-canvas").append(box);
     }
+
+    // make 'em sortable!
+    $("#game-canvas").sortable({
+        tolerance: "pointer",
+        placeholder: "color-box-placeholder"
+    });
 }
 
 // build a game based on the player's current level
