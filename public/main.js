@@ -1,5 +1,8 @@
 let playerLevel = 1;
 
+const checkButton = document.getElementById("check-button");
+checkButton.addEventListener("click", checkSorting);
+
 // make a request
 function setupLevel(levelNum) {
     // figure out how many colors to get
@@ -31,6 +34,10 @@ function setupLayout(colorArray) {
         tolerance: "pointer",
         placeholder: "color-box-placeholder"
     });
+}
+
+function checkSorting() {
+    console.log("checking sorting...");
 }
 
 // build a game based on the player's current level
