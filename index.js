@@ -46,7 +46,7 @@ function checkColorOrder(data) {
                 }
             }
             break;
-        case saturation:
+        case "saturation":
             console.log("checking saturation is TODO");
             break;
         case "luminosity":
