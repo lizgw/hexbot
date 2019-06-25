@@ -2,7 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const path = require("path");
 const PORT = process.env.PORT || 5000;
-const Color = require("Color");
+const Color = require("color");
 
 // server setup
 const app = express();
