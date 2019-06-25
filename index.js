@@ -17,21 +17,31 @@ function checkColorOrder(data) {
 
     switch(data.type) {
         case "hue":
-            for (var i = 0; i < data.colors.length - 1; i++)
+            let hues = [];
+            let sortedHues = [];
+            // make lists of the hues
+            for (let i = 0; i < data.colors.length; i++) {
+                let hue = Color(data.colors[i]).hue();
+                hues[i] = hue;
+                sortedHues[i] = hue;
+            }
+
+            // now sort one of the lists
+            sortedHues.sort((a, b) => {
+                if (a < b)
+                    return -1
+                else if (a > b)
+                    return 1
+                else
+                    return 0
+            });
+
+            // check each value in the user's submission
+            // if there's a mismatch, push that to the status object
+            for (let i = 0; i < hues.length; i++)
             {
-                // get values to compare
-                let colorValue = data.colors[i];
-                let nextColorValue = data.colors[i + 1];
-
-                // make colors
-                let hue1 = Color(colorValue).hue();
-                let hue2 = Color(nextColorValue).hue();
-
-                // if they're out of order, save the indexes
-                if (hue1 > hue2)
-                {
-                    // TODO: check that hue 2 isn't already in there
-                    statusObject.outOfOrder.push(i, i + 1);
+                if (hues[i] != sortedHues[i]) {
+                    statusObject.outOfOrder.push(i);
                     statusObject.result = "failure";
                 }
             }

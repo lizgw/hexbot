@@ -64,6 +64,20 @@ function checkSorting() {
             } else {
                 console.log("uh oh, these colors are out of order: ");
                 console.log(response.outOfOrder);
+
+                // restyle the borders of the ones that are out of order
+                $(".color-box").each(function(i, elem) {
+                    // if this index is one of the ones out of order
+                    if (response.outOfOrder.indexOf(i) != -1)
+                    {
+                        // add the out-of-order class
+                        elem.classList.add("color-box-incorrect");
+                        // remove the class once the anim finishes
+                        setTimeout((e) => {
+                            e.classList.remove("color-box-incorrect");
+                        }, 1000, elem);
+                    }
+                });
             }
         }
     });
